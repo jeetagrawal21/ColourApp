@@ -19,7 +19,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class ColourApp extends Application {
+public class ColorApp extends Application {
 //    @Override
 
     Color currentColor = Color.BLACK;
