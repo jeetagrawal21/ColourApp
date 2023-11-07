@@ -1,0 +1,107 @@
+// NAME: JEET AGRAWAL
+// NSID: jea316
+// STUDENT ID: 11269096
+        HBox root = new HBox();
+        root.setSpacing(20);
+        root.setPadding(new Insets(10, 10 , 10, 10));
+
+        Circle circle = new Circle();
+        circle.setRadius(100);
+
+// FOR SLIDERS
+        // SLIDER 1
+        HBox forSlider1 = new HBox();
+        forSlider1.setSpacing(40);
+        forSlider1.setPadding(new Insets(10, 10 , 10, 10));
+
+        Label s1t1 = new Label("Red:");
+        Slider slider1 = new Slider(0,100,50);
+        Label s1t2 = new Label("0");
+
+        forSlider1.getChildren().addAll(s1t1,slider1,s1t2);
+
+        // SLIDER 2
+        HBox forSlider2 = new HBox();
+        forSlider2.setSpacing(30);
+        forSlider2.setPadding(new Insets(10, 10 , 10, 10));
+
+        Label s2t1 = new Label("Green:");
+        Slider slider2 = new Slider(0,100,50);
+        Label s2t2 = new Label("    0");
+
+        forSlider2.getChildren().addAll(s2t1,slider2,s2t2);
+
+        // SLIDER 3
+        HBox forSlider3 = new HBox();
+        forSlider3.setSpacing(40);
+        forSlider3.setPadding(new Insets(10, 10 , 10, 10));
+
+        Label s3t1 = new Label("Blue:");
+        Slider slider3 = new Slider(0,100,50);
+        Label s3t2 = new Label("0");
+
+        forSlider3.getChildren().addAll(s3t1,slider3,s3t2);
+
+        // END FOR SLIDERS.
+
+
+        // Add to palette button
+
+        Button addPalette = new Button("Add to Palette");
+        addPalette.setPrefWidth(100);
+
+        // CIRCLES THREE
+        HBox circles = new HBox();
+        circles.setAlignment(Pos.CENTER_LEFT);
+        circles.setPadding(new Insets(10 ,10, 10 ,10));
+
+        Circle c1 = new Circle(40, Color.WHITE);
+        c1.setStroke(Color.BLACK);
+
+        Circle c2 = new Circle(40, Color.WHITE);
+        c2.setStroke(Color.BLACK);
+
+        Circle c3 = new Circle(40,Color.WHITE);
+        c3.setStroke(Color.BLACK);
+
+        circles.getChildren().addAll(c1,c2,c3);
+
+        // Add to List button
+
+        Button addList = new Button("Add to List");
+        addList.setPrefWidth(100);
+
+        // VERTICAL BOX LEFT
+
+        VBox leftVertical = new VBox();
+//        leftVertical.setSpacing(20);
+//        leftVertical.setPadding(new Insets(10, 10 , 10, 10));
+        leftVertical.setAlignment(Pos.CENTER);
+//        leftVertical.prefWidth(50);
+//        leftVertical.prefHeight(100);
+
+        leftVertical.getChildren().addAll(circle,forSlider1,forSlider2,forSlider3,addPalette,circles,addList);
+
+        // VERTICAL BOX RIGHT
+
+        VBox rightVertical = new VBox();
+        rightVertical.setAlignment(Pos.TOP_CENTER);
+
+        ListView<String> listView = new ListView<>();
+        listView.setPrefSize(300,500);
+
+        listView.getItems().add("Placeholder Text");
+        listView.getItems().add("Placeholder Text");
+        listView.getItems().add("Placeholder Text");
+
+        rightVertical.getChildren().addAll(listView);
+
+        root.getChildren().addAll(leftVertical,rightVertical);
+
+        Scene scene = new Scene(root);
+
+        stage.setTitle("A1");
+        stage.setScene(scene);
+        stage.show();
+
+    }
